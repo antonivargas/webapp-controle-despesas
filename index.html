@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html manifest="offlinedatabase.manifest">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=480; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+      <title>Aplicativo para Controle de Despesas</title>
+      <script type="text/javascript" src="logica.js" ></script>
+      <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+      <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />      
+   <style>
+ 	body { font-family:Verdana, Geneva, sans-serif; font-size:11px; }
+        #container{position: relative; width:40%; margin:0 auto;}
+   </style> 
+ 
+   </head>
+   <body onload="onInit()">
+   <div data-role="header">
+       <h2>Controle de Despesas</h2>
+   </div>
+   
+      <div data-role="content">
+      <div id="container">
+      <h3>Descreva a despesa:</h3>
+      <form name="itemForm">
+		<input type="hidden" name="id" id="id" size="2" disabled="true" /><br />
+		<label for="item">Despesa:</label><input type="text" name="item" id="item" size="10" /><br />
+		<label for="valor">Valor R$</label><input type="text" name="valor" id="valor" size="10" /><br />
+        <label for="data">Data</label><input type="text" name="data" id="data" size="10" /><br />
+		<input type="button" name="create" value="Cadastrar" onclick="onCreate()" />
+		<input type="button" name="update" value="Alterar" onclick="onUpdate()" />
+		<input type="button" name="delete" value="Excluir" onclick="onDelete()" />                
+                               
+      </form>	  
+      <div id="status"></div>
+      <h3>Lista de Despesas:</h3>
+            <ul  id="itemData" style="cursor:pointer;">
+            </ul>      
+      </div>         
+          
+      </div>     
+    
+     
+   <div data-role="footer">
+       <center><p>&copy;Development By Dimi Antoni</p></center>
+   </div>
+   </body>
+</html>
